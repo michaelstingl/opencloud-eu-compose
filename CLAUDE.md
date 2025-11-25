@@ -13,7 +13,7 @@ This document provides AI assistants with comprehensive context about the OpenCl
 ## Repository Structure
 
 ```
-opencloud-eu-compose/
+opencloud-compose/
 ├── docker-compose.yml          # Core OpenCloud service definition
 ├── .env.example                # Environment variable template (copy to .env)
 ├── README.md                   # User documentation
