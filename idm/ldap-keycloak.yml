@@ -85,7 +85,11 @@ services:
     entrypoint: [ "/bin/sh", "/opt/keycloak/bin/docker-entrypoint-override.sh" ]
     volumes:
       - "./config/keycloak/docker-entrypoint-override.sh:/opt/keycloak/bin/docker-entrypoint-override.sh"
+      - "./config/keycloak/00-wait-for-keycloak.sh:/opt/keycloak/bin/00-wait-for-keycloak.sh:ro"
+      - "./config/keycloak/10-import-clients.sh:/opt/keycloak/bin/10-import-clients.sh:ro"
+      - "./config/keycloak/11-assign-client-scopes.sh:/opt/keycloak/bin/11-assign-client-scopes.sh:ro"
       - "./config/keycloak/opencloud-realm.dist.json:/opt/keycloak/data/import-dist/openCloud-realm.json"
+      - "./config/keycloak/clients:/opt/keycloak/data/clients:ro"
       - "./config/keycloak/themes/opencloud:/opt/keycloak/themes/opencloud"
     environment:
       LDAP_ADMIN_PASSWORD: ${LDAP_BIND_PASSWORD:-admin}
