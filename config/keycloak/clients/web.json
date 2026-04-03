@@ -58,7 +58,8 @@
     "roles",
     "groups",
     "basic",
-    "email"
+    "email",
+    "OpenCloudUnique_ID"
   ],
   "optionalClientScopes": [
     "address",
